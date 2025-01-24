@@ -1,13 +1,25 @@
+import { countriesData } from "@/db/mockkData";
+import Link from "next/link";
+
 type Params= {
   countrySlug: string;
 }
 
 export default async function CountryDetails({ params }: { params: Params }) {
 
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+  const countrySlug = params.countrySlug;
 
-      <div className="text-black">{params?.countrySlug}</div>
+  function getCitiesByCountry(countrySlug: string) {
+    const country = countriesData.find(item => item.country.toLowerCase() === countrySlug.toLowerCase());
+    return country ? country.cities : [];
+  }
+
+  const citiesList = getCitiesByCountry(countrySlug.toLowerCase());
+
+  return (
+    <div className="pt-[50px] pl-[50px]">
+      <div className="text-black pb-[50px]">{countrySlug.toUpperCase()}</div>
+      {citiesList.map(city=> <Link key={city} className="text-black cursor-pointer flex flex-col pb-5" href={`/countries/${countrySlug}/${city}`}>{city}</Link>)}
     </div>
   );
 }
