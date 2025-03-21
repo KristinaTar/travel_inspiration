@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import "./globals.css";
 import travelIcon from "./../../public/images/icons/luggage.png";
-
+import Providers from "@/providers";
 
 
 export const metadata: Metadata = {
@@ -23,7 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <p className="font-semibold sm:text-base text-sm text-center">Welcome to Khrystyna's travel inspirations website </p>
       </div>
     </div>
+    <Providers>
     {children}
+    </Providers>
     </body>
     </html>
   );

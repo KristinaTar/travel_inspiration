@@ -15,18 +15,18 @@ export default function Home() {
           <div className="text-grey-primary font-bold min-w-[300px]">Hidden Gems Around the World</div>
           <div className="text-grey-primary font-semibold min-w-[300px]">Read and explore more new destinations</div>
         </div>
-        <div className="flex sm:gap-10 justify-self-end gap-2">
-          {countriesData.map((country) => (
-            <Link key={country.id} className="rounded relative group" href={`/countries/${country.slug}`}>
-              <Image src={country.coverImg} alt='country cover photo'
-                     className="w-64 h-70 rounded cursor-pointer hover:opacity-20"/>
-              <div
-                className="absolute inset-0 bg-green-primary bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded">
-                <span className="text-white text-sm font-semibold">{country.country}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/*<div className="flex sm:gap-10 justify-self-end gap-2">*/}
+        {/*  {countriesData.map((country) => (*/}
+        {/*    <Link key={country.id} className="rounded relative group" href={`/countries/${country.slug}`}>*/}
+        {/*      <Image src={country.coverImg} alt='country cover photo'*/}
+        {/*             className="w-64 h-70 rounded cursor-pointer hover:opacity-20"/>*/}
+        {/*      <div*/}
+        {/*        className="absolute inset-0 bg-green-primary bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded">*/}
+        {/*        <span className="text-white text-sm font-semibold">{country.country}</span>*/}
+        {/*      </div>*/}
+        {/*    </Link>*/}
+        {/*  ))}*/}
+        {/*</div>*/}
       </div>
     </div>
   );
